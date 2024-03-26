@@ -1,3 +1,4 @@
+import { adminDataReducer } from '04_features/AdminChangingPanelData/model/slice/adminDataSlice'
 import type { ThunkExtraArg } from './StateSchema'
 import { authReducer } from '04_features/AuthByEmail/model/slice/authSlice'
 import { deviceReducer } from '05_entities/Device/model/slice/deviceSlice'
@@ -14,7 +15,8 @@ export const store = configureStore({
   reducer: {
     user: userReducer,
     device: deviceReducer,
-    auth: authReducer
+    auth: authReducer,
+    adminData: adminDataReducer
   },
   middleware: getDefaultMiddleware => getDefaultMiddleware({
     thunk: {

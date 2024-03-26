@@ -17,8 +17,12 @@ export const checkIsAdminMiddleware = (req, res, next) => {
     }
     const { validateAccessToken } = tokenService()
     const userData = validateAccessToken(accessToken)
-    if(!userData || !userData.role.includes('ADMIN')) {
+    if(!userData) {
       return next(ApiError.unauthorized())
+    }
+    if(!userData.role.includes('ADMIN')) {
+      console.log('error role')
+      return next(ApiError.forbidden())
     }
     console.log('Admin is here')
     req.user = userData

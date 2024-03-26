@@ -1,3 +1,6 @@
+import {
+  ChangingUsersDataForm
+} from '04_features/AdminChangingPanelData/ui/ChangingUsersDataForm/ChangingUsersDataForm'
 import { Button } from '06_shared/ui/Button/Button'
 import { ButtonTheme } from '06_shared/ui/Button/model/button'
 import cls from './AdminPage.module.css'
@@ -10,6 +13,8 @@ export const AdminPage =() => {
       <Button theme={ButtonTheme.OUTLINE_BG_INVERTED}>Add Brand</Button>
       <Button theme={ButtonTheme.OUTLINE_BG_INVERTED}>Add Device</Button>
       <Button theme={ButtonTheme.OUTLINE_BG_INVERTED}>Get Users</Button>
+
+      <ChangingUsersDataForm/>
     </div>
   )
 }

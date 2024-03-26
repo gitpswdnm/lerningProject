@@ -12,7 +12,7 @@ interface RegisterByEmailProps {
 
 export const
   registerByEmail = createAsyncThunk<AuthResponse, RegisterByEmailProps, ThunkConfig<string>>(
-    'login/registerByEmail',
+    'auth/registerByEmail',
     async (user, thunkAPI) => {
       const { dispatch, extra, rejectWithValue } = thunkAPI
       try {
@@ -25,8 +25,8 @@ export const
         localStorage.setItem(LOCAL_STORAGE_ACCESS_TOKEN, JSON.stringify(response.data.accessToken))
         dispatch(userActions.setAuthData(response.data.user))
         dispatch(userActions.setIsAuth(true))
-        console.log(response)
         console.log(response.data)
+        console.log(response)
         return response.data
       } catch(e) {
         console.log(e)

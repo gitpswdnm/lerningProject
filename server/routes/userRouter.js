@@ -17,7 +17,7 @@ router.post(
 )
 router.post('/login', body('email').isEmail(), userController.login)
 router.post('/logout', userController.logout)
-router.delete('/del', userController.deleteUser)
+router.delete('/del', checkIsAdminMiddleware, userController.deleteUser)
 router.get('/refresh', userController.refresh)
 router.get('/all', checkIsAdminMiddleware, userController.getAllUsers)
 router.use('/basket', basketRouter)
