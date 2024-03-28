@@ -8,7 +8,7 @@ export const
   getAllUsers = createAsyncThunk<IUser[], void, ThunkConfig<string>>(
     'adminData/getAllUsers',
     async (_, thunkAPI) => {
-      const { dispatch, extra, rejectWithValue } = thunkAPI
+      const { dispatch, extra, rejectWithValue  } = thunkAPI
       try {
         const response = await extra.api.get<IUser[]>('/user/all')
 

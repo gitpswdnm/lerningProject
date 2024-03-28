@@ -14,7 +14,7 @@ export const adminDataSlice = createSlice({
   name: 'adminData',
   initialState,
   reducers: {
-    setUsers: (state, action:PayloadAction<IUser[]>) => {
+    setUsers: (state, action: PayloadAction<IUser[]>) => {
       state.users = action.payload
     }
   },

@@ -24,15 +24,15 @@ export const ChangingUsersDataForm = memo((props: ChangingUsersDataFormProps) =>
   return (
     <ul className={classNames(cls.users, [className])}>
       <li className={cls.user}>
-        <Text text='id'/>
-        <Text text='email'/>
-        <Text text='role'/>
+        <Text text='id' />
+        <Text text='email' />
+        <Text text='role' />
       </li>
-      { users?.map((user) => (
+      {users?.map((user) => (
         <li className={cls.user} key={user.id}>
-          <Text text={String(user.id)}/>
+          <Text text={String(user.id)} />
           <Text text={user.email} />
-          <Text text={String(user.role)}/>
+          <Text text={String(user.role)} />
         </li>
       ))}
     </ul>
